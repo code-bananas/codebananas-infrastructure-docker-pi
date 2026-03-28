@@ -1,0 +1,15 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "MarketBot DB Prod",
+      "Group": "Production",
+      "Host": "192.168.0.115",
+      "Port": 5434,
+      "MaintenanceDB": "postgres",
+      "Username": "admin",
+      "Password": "${POSTGRES_PASSWORD}",
+      "SSLMode": "prefer",
+      "Description": "Production PostgreSQL database"
+    }
+  }
+}

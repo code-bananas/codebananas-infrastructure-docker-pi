@@ -1,0 +1,18 @@
+services:
+  postgres:
+    container_name: marketbot-db-pg-prod
+    ports:
+      - "5434:5432"
+
+  pgadmin:
+    container_name: marketbot-db-pgadmin-prod
+    ports:
+      - "5052:80"
+    volumes:
+      - ./pgadmin-servers.prod.json:/pgadmin4/servers.json
+      
+volumes:
+  pgdata:
+    name: pgdata-prod
+  pgadmin-data:
+    name: pgadmin-data-prod

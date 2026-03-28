@@ -1,0 +1,53 @@
+# Ignore common Docker runtime/app data folders anywhere
+**/config/
+**/ollama/
+**/webui/
+**/etc-dnsmasq.d/  
+**/etc-pihole/
+**/data/
+**/logs/
+**/log/
+**/cache/
+**/tmp/
+**/run/
+**/db/
+**/database/
+**/backup/
+**/backups/
+**/uploads/
+**/storage/
+**/jenkins_home/
+**/postgres_data/
+**/mysql/
+**/redis/
+**/grafana-data/
+**/prometheus-data/
+**/minio-data/
+**/letsencrypt/
+**/grafana/  
+**/loki/  
+**/promtail/
+
+
+# SSH keys
+id_ed25519
+id_ed25519.pub
+**/id_ed25519
+**/id_ed25519.pub
+**/.ssh/
+
+# Env / secrets
+.env
+.env.*
+secrets/
+**/secrets/
+*.pem
+*.key
+
+# App data / databases / logs
+data/
+**/data/
+logs/
+**/logs/
+*.db
+*.sqlite

@@ -1,0 +1,15 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "MarketBot DB Dev",
+      "Group": "Development",
+      "Host": "192.168.0.115",
+      "Port": 5432,
+      "MaintenanceDB": "postgres",
+      "Username": "admin",
+      "Password": "${POSTGRES_PASSWORD}",
+      "SSLMode": "prefer",
+      "Description": "Development PostgreSQL database"
+    }
+  }
+}

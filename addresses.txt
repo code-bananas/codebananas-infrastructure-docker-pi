@@ -1,0 +1,8 @@
+Jenkins: 8085 (50000 for agents)
+Minio: 9000 (API), 9001 (UI)
+Nginx: 80, 81, 443
+Ollama Webui: 9005
+PgAdmin: 5050
+Postgres: 5432
+Sqlite Web (Dev): 8100
+WireGuard: 51820

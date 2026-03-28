@@ -1,0 +1,11 @@
+services:
+  sqlite-web:
+    image: sqrt3/sqlite-web:latest
+    container_name: sqlite-web
+    ports:
+      - "8100:8080"
+    volumes:
+      - /srv/docker/market_bot/dev:/data
+    environment:
+      SQLITE_DATABASE: stock_data.db
+    restart: unless-stopped
