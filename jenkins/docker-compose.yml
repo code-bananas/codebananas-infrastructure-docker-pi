@@ -4,14 +4,20 @@ networks:
 
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    build: .
+    image: codebananas-jenkins:latest
     container_name: jenkins
-    user: "1000:1000"   # your UID:GID from 'id' command
+    # root is required to access the Docker socket; acceptable for a homelab
+    user: root
     restart: unless-stopped
     ports:
-      - "8085:8080"     # Jenkins web UI
-      - "50000:50000"   # For Jenkins agents
+      - "8085:8080"   # Jenkins web UI
+      - "50000:50000" # Jenkins agent communication
     volumes:
       - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock          # Docker-outside-of-Docker
+      - /srv/docker/application:/srv/docker/application    # Deployment target directory
     environment:
       JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
+    networks:
+      - proxy

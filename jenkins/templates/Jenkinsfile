@@ -1,0 +1,8 @@
+@Library('codebananas-shared-library') _
+
+codebananasPipeline(
+    // tests: true,             // set false to skip unit tests
+    // deployDev:  true,        // set false to disable dev deployments
+    // deployProd: true,        // set false to disable prod deployments
+    // notifyEmail: 'you@example.com',  // uncomment once email is configured in Jenkins
+)

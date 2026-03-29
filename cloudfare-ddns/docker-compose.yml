@@ -22,7 +22,7 @@ services:
     environment:
       - CLOUDFLARE_API_TOKEN=ok6rUzV9c_1SSrlyvb_HlwaRNikGt5WQkKuOdU-v
         # Your Cloudflare API token
-      - DOMAINS=andrewlester.dev,www.andrewlester.dev,api.andrewlester.dev,codebananas.com,www.codebananas.com,api.codebananas.com,api.codebananas.dev,codebananas.dev,www.codebananas.dev,mb.codebananas.dev
+      - DOMAINS=andrewlester.dev,www.andrewlester.dev,api.andrewlester.dev,codebananas.com,www.codebananas.com,api.codebananas.com,api.codebananas.dev,codebananas.dev,www.codebananas.dev,mb.codebananas.dev,newsbot.codebananas.com,marketbot.codebananas.com
         # Your domains (separated by commas)
       - PROXIED=false
         # Tell Cloudflare to cache webpages and hide your IP (optional)

@@ -1,0 +1,23 @@
+# Deployment compose file — Jenkins copies this to /srv/docker/application/<project>/
+# and starts it with IMAGE_TAG, PROJECT_NAME, DEPLOY_ENV, APP_PORT set as env vars.
+#
+# Required env vars (set in .env.dev / .env.prod in your project repo):
+#   APP_PORT     — host port to expose (e.g. 8090 for dev, 8080 for prod)
+#   SPRING_PROFILES_ACTIVE — spring profile (dev / prod)
+#   <any other app-specific env vars your service needs>
+
+networks:
+  proxy:
+    external: true
+
+services:
+  app:
+    image: ${PROJECT_NAME}:${IMAGE_TAG}
+    container_name: ${PROJECT_NAME}-${DEPLOY_ENV}
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT}:8080"
+    env_file:
+      - .env
+    networks:
+      - proxy
